@@ -82,11 +82,7 @@ export default function PaymentPage() {
           <h1>Link de Pagamento</h1>
           <p className="receiver-name">{payload.receiverName}</p>
 
-          {hasAmount ? (
-            <p className="amount">Valor: R$ {payload.amount}</p>
-          ) : (
-            <p className="amount">Valor em aberto</p>
-          )}
+          {hasAmount ? <p className="amount">Valor: R$ {payload.amount}</p> : null}
 
           <div className="qr-wrapper">
             <QRCodeSVG value={pixCode} size={260} bgColor="#FFFFFF" fgColor="#071722" />
@@ -95,7 +91,7 @@ export default function PaymentPage() {
           <p className="label">Use o codigo Pix copia e cola:</p>
           <textarea className="pix-code" readOnly value={pixCode} rows={6} />
 
-          <div className="actions">
+          <div className="actions payment-actions">
             <button
               className="primary-button"
               type="button"
@@ -106,10 +102,6 @@ export default function PaymentPage() {
             >
               Copiar codigo Pix
             </button>
-
-            <Link className="secondary-button link-button" to="/">
-              Criar novo link
-            </Link>
           </div>
 
           {feedback ? <p className="message success">{feedback}</p> : null}

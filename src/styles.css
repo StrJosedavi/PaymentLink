@@ -194,6 +194,11 @@ select:focus {
   gap: 0.6rem;
 }
 
+.payment-actions {
+  grid-template-columns: minmax(180px, max-content);
+  justify-content: center;
+}
+
 .hint {
   margin: 0.25rem 0 0;
   color: var(--ink-700);
