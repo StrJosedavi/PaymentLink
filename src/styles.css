@@ -227,12 +227,16 @@ select:focus {
   padding: 2rem;
 }
 
-.brand-mark {
-  width: 68px;
-  aspect-ratio: 1;
-  transform: rotate(45deg);
-  border-radius: 14px;
-  background: rgb(0 0 0 / 12%);
+.payment-pix-icon {
+  width: 118px;
+  height: 118px;
+}
+
+.payment-pix-icon img,
+.payment-pix-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .payment-brand p {
@@ -256,6 +260,16 @@ select:focus {
   border: 1px solid var(--line);
   box-shadow: 0 14px 36px rgb(9 35 51 / 12%);
   padding: 1.3rem;
+}
+
+.payment-watermark {
+  position: fixed;
+  right: 0.9rem;
+  bottom: 0.55rem;
+  margin: 0;
+  font-size: 0.78rem;
+  color: color-mix(in srgb, var(--ink-700) 78%, white 22%);
+  pointer-events: none;
 }
 
 .payment-card h1 {
@@ -332,5 +346,11 @@ select:focus {
 
   .payment-brand {
     min-height: 120px;
+  }
+
+  .payment-watermark {
+    right: 0.6rem;
+    bottom: 0.45rem;
+    font-size: 0.7rem;
   }
 }

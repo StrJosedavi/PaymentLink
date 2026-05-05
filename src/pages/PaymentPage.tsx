@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { QRCodeSVG } from "qrcode.react";
 import { generatePixPayload } from "../lib/pix";
+import pixOfficialIcon from "../assets/pix-official-icon.svg";
 import {
   decodePaymentToken,
   getPaymentLinkExpirationDate,
@@ -70,7 +71,9 @@ export default function PaymentPage() {
   return (
     <main className="payment-page">
       <aside className="payment-brand">
-        <div className="brand-mark" />
+        <div className="payment-pix-icon" aria-hidden="true">
+          <img src={pixOfficialIcon} alt="" />
+        </div>
         <p>Pague com Pix em segundos.</p>
       </aside>
 
@@ -112,6 +115,10 @@ export default function PaymentPage() {
           {feedback ? <p className="message success">{feedback}</p> : null}
         </div>
       </section>
+
+      <p className="payment-watermark">
+        Gerado atraves do StrJoseDavi Link de Pagamento
+      </p>
     </main>
   );
 }
